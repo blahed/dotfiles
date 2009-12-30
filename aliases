@@ -1,0 +1,21 @@
+UNAME=$(uname)
+
+if [ $UNAME = "FreeBSD" ] || [ $UNAME = "Darwin" ]; then
+   alias ls="ls -G"
+elif [ $UNAME = "Linux" ]; then
+   alias ls="ls --color=auto"
+elif [ $UNAME = 'SunOS' ]; then
+   alias ls="ls --color=always"
+fi
+
+alias ll='ls -al'
+
+alias grep='GREP_COLOR="1;37;41" LANG=C grep --color=auto'
+alias df='df -h'
+alias du='du -h -d 1'
+alias less='less -I'
+
+alias targzc='tar --exclude=".DS_Store" --exclude="*pyc" -zcvf'
+alias tarbzc='tar --exclude=".DS_Store" --exclude="*pyc" -jcvf'
+alias targzx='tar -zxvf'
+alias tarbzx='tar -xvjf'

@@ -1,0 +1,43 @@
+git_dirty () {
+    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+
+git_branch_name () {
+    git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
+}
+
+function precmd {
+    GITBRANCH=$(git_branch_name)
+    GITDIRTY=$(git_dirty)
+    setprompt
+}
+
+autoload colors
+eval colors
+
+case `hostname` in
+    envelope)
+        COLOR=white ;;
+    mvm)
+        COLOR=green ;;
+    *)
+        COLOR=pink ;;
+esac
+
+setprompt () {
+          setopt prompt_subst
+	  local btext="%{$fg_bold[$COLOR]%}"
+          local final="%{$reset_color%}"
+
+          if [ -n "$GITBRANCH" ]
+          then
+            local git="(%{$fg_no_bold[green]%}$GITBRANCH%{$fg_no_bold[yellow]%}$GITDIRTY${final})"
+          else
+            local git=""
+          fi
+
+          PROMPT="${btext}%m ${final}%c ${git}%# "
+            RPROMPT=""
+}
+
+setprompt
