@@ -1,3 +1,6 @@
+[user]
+        name = blahed
+        email = travis.dunn@thisismedium.com
 [color]
         diff = auto
         status = auto
@@ -16,4 +19,4 @@
 [core]
         pager = less -FRSX
         whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-        # excludesfile = 
+        excludesfile = /Users/travis/.dotfiles/gitignore

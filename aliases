@@ -14,6 +14,7 @@ alias grep='GREP_COLOR="1;37;41" LANG=C grep --color=auto'
 alias df='df -h'
 alias du='du -h -d 1'
 alias less='less -I'
+alias ri='ri -Tf ansi'
 
 alias targzc='tar --exclude=".DS_Store" --exclude="*pyc" -zcvf'
 alias tarbzc='tar --exclude=".DS_Store" --exclude="*pyc" -jcvf'
