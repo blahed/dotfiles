@@ -1,4 +1,5 @@
 DOTFILES = %w(zshrc gitconfig emacs)
+BIN_FOLDERS = %w(applescripts)
  
 task :default => [:usage]
 task :usage do
@@ -13,23 +14,38 @@ end
 
 task :install do
   include InstallHelper
+  
   create_backup_dir unless File.exist? backup_dir
+  create_bin_dir unless File.exist? bin_dir
+  
   DOTFILES.each do |file|
-    filename = split_all(file).last
-    create_backup filename
-    create_link filename
+    create_backup file
+    create_link file
+  end
+  
+  BIN_FOLDERS.each do |folder|
+    Dir[File.join(Rake.original_dir, folder, '*')].each do |file|
+      target = File.join(ENV['HOME'], 'bin', split_all(file).last)
+      safe_ln(file, target) unless File.exist? target
+    end
   end
 end
 
 module InstallHelper
   def backup_dir
-    @@backup_dir ||= File.join(ENV['HOME'], ".pre_dotfiles")
+    @@backup_dir ||= File.join(ENV['HOME'], '.pre_dotfiles')
+  end
+  
+  def bin_dir
+    @@bin_dir ||= File.join(ENV['HOME'], 'bin')
   end
   
   def create_backup_dir
-    sh %{mkdir "#{backup_dir}"} do |ok, res|
-      puts "Could not create #{backup_dir} (status = #{res.exitstatus})" unless ok
-    end
+    sh %{mkdir "#{backup_dir}"}
+  end
+  
+  def create_bin_dir
+    sh %{mkdir "#{bin_dir}"}
   end
  
   def create_backup(file)

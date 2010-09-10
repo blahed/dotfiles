@@ -1,4 +1,4 @@
-export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:~/bin/:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 export LSCOLORS='Gxcxfxfxfxdxdxhbadbxbx'
 
