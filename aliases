@@ -15,6 +15,7 @@ alias df='df -h'
 alias du='du -h -d 1'
 alias less='less -I'
 alias ri='ri -Tf ansi'
+alias sg='shotgun -s thin -p 3333'
 
 alias targzc='tar --exclude=".DS_Store" --exclude="*pyc" -zcvf'
 alias tarbzc='tar --exclude=".DS_Store" --exclude="*pyc" -jcvf'
