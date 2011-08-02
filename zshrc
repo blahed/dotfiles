@@ -24,7 +24,7 @@ bindkey -e
 
 EXT_DOTS=$HOME/.dotfiles/ext
 
-if [ -d "$EXT_DOTS" ] then;
+if [ -d "$EXT_DOTS" ]; then
   for FILE in $(ls $EXT_DOTS); do
     source $EXT_DOTS/$FILE
   done
