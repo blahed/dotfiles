@@ -8,7 +8,7 @@ elif [ $UNAME = 'SunOS' ]; then
    alias ls="ls --color=always"
 fi
 
-alias ll='ls -al'
+alias ll='ls -alh'
 
 alias grep='GREP_COLOR="1;37;41" LANG=C grep --color=auto'
 alias df='df -h'

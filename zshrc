@@ -1,6 +1,6 @@
-export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:~/bin/:$PATH
+# export PATH=~/.rvm/bin/:~/bin/:$PATH
+export PATH=~/bin/:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
-export LSCOLORS='Gxcxfxfxfxdxdxhbadbxbx'
 
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
@@ -22,5 +22,15 @@ unsetopt beep
 unsetopt automenu
 bindkey -e
 
+for FILE in $(ls $HOME/.dotfiles/ext); do
+  source $HOME/.dotfiles/ext/$FILE
+done
+
+source ~/.dotfiles/colors
 source ~/.dotfiles/prompt
 source ~/.dotfiles/aliases
+# virtualenvwrapper
+# export WORKON_HOME=$HOME/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
+
+[[ -s "/Users/travis/.rvm/scripts/rvm" ]] && source "/Users/travis/.rvm/scripts/rvm"

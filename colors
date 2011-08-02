@@ -1,0 +1,7 @@
+UNAME=$(uname)
+
+if [ $UNAME = "FreeBSD" ] || [ $UNAME = "Darwin" ]; then
+   export LSCOLORS='Gxcxbxfxfxdxdxhbadbxbx'
+elif [ $UNAME = "Linux" ]; then
+   export LSCOLORS='di=1;96:fi=0:ln=91:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=31'
+fi

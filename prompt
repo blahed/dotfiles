@@ -15,11 +15,16 @@ function precmd {
 autoload colors
 eval colors
 
-case `hostname` in
+if [[ $HOSTNAME == '' ]]
+then
+  HOSTNAME=$(hostname)
+fi
+
+case $HOSTNAME in
     envelope)
         COLOR=white ;;
-    mvm)
-        COLOR=green ;;
+    envy*)
+        COLOR=white ;;
     *)
         COLOR=pink ;;
 esac
@@ -36,7 +41,7 @@ setprompt () {
             local git=""
           fi
 
-          PROMPT="${btext}%m ${final}%c ${git}%# "
+          PROMPT="${btext}$HOSTNAME ${final}%c ${git}%# "
             RPROMPT=""
 }
 
