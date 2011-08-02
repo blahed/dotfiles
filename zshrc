@@ -22,9 +22,13 @@ unsetopt beep
 unsetopt automenu
 bindkey -e
 
-for FILE in $(ls $HOME/.dotfiles/ext); do
-  source $HOME/.dotfiles/ext/$FILE
-done
+EXT_DOTS=$HOME/.dotfiles/ext
+
+if [ -d "$EXT_DOTS" ] then;
+  for FILE in $(ls $EXT_DOTS); do
+    source $EXT_DOTS/$FILE
+  done
+fi
 
 source ~/.dotfiles/colors
 source ~/.dotfiles/prompt
