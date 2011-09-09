@@ -1,17 +1,8 @@
 DOTFILES = %w(zshrc gitconfig emacs)
 BIN_FOLDERS = %w(applescripts)
  
-task :default => [:usage]
-task :usage do
-  description = <<-DOC
-    Usage: rake install
-    Install the dotfiles in the current user's home directory.
-    Files that existed prior to this dotfiles will be moved
-    to the '.pre_dotfiles' directory with a timestamp.
-DOC
-  puts description
-end
 
+desc "Install dotfiles in home directory (pre-existing files are moved to .pre_dotfiles)"
 task :install do
   include InstallHelper
   
@@ -29,6 +20,11 @@ task :install do
       safe_ln(file, target) unless File.exist? target
     end
   end
+end
+
+desc "Set OSX defaults"
+task :set_osx_defaults do
+  exec "sh #{Dir.pwd}/osx"
 end
 
 module InstallHelper

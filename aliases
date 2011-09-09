@@ -8,7 +8,26 @@ elif [ $UNAME = 'SunOS' ]; then
    alias ls="ls --color=always"
 fi
 
+# long pretty list
 alias ll='ls -alh'
+# list directories
+alias lsd='ll | grep "^d"'
+
+# filesize
+alias filesize='stat -f "%z bytes"'
+
+# shortcuts
+alias dev='cd ~/Dev'
+
+# ip addresses
+alias ip-public='dig +short myip.opendns.com @resolver1.opendns.com'
+alias ip-wired='ipconfig getifaddr en0'
+alias ip-wireless='ipconfig getifaddr en1'
+
+# fix pbcopy
+alias cb='tr -d "\n" | pbcopy'
+
+
 
 alias grep='GREP_COLOR="1;37;41" LANG=C grep --color=auto'
 alias df='df -h'

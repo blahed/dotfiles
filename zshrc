@@ -1,6 +1,8 @@
 # export PATH=~/.rvm/bin/:~/bin/:$PATH
 export PATH=~/bin/:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
+# nano is the default sucka!
+export EDITOR="nano"
 
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
