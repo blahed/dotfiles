@@ -18,7 +18,6 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd
 unsetopt beep
 unsetopt automenu
 bindkey -e
@@ -36,3 +35,6 @@ fi
 source ~/.dotfiles/colors
 source ~/.dotfiles/prompt
 source ~/.dotfiles/aliases
+
+# rbenv
+eval "$(rbenv init -)"
