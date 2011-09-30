@@ -1,6 +1,12 @@
 # Enable the 2D Dock
 defaults write com.apple.dock no-glass -bool true
 
+# Show indicator lights for open applications in the Dock
+defaults write com.apple.Dock show-process-indicators -bool true
+
+# Don’t animate opening applications from the Dock
+defaults write com.apple.Dock launchanim -bool false
+
 # Disable menu bar transparency
 defaults write -g AppleEnableMenuBarTransparency -bool false
 
@@ -33,6 +39,9 @@ defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 # Automatically open a new Finder window when a volume is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+
+# Always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
