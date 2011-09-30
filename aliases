@@ -13,6 +13,9 @@ alias ll='ls -alh'
 # list directories
 alias lsd='ll | grep "^d"'
 
+# bundler
+alias be='bundle exec'
+
 # filesize
 alias filesize='stat -f "%z bytes"'
 

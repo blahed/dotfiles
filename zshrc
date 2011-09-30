@@ -1,5 +1,4 @@
-# export PATH=~/.rvm/bin/:~/bin/:$PATH
-export PATH=~/bin/:$PATH
+export PATH=$HOME/bin/:$HOME/.rbenv/bin:/usr/local/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 # nano is the default sucka!
 export EDITOR="nano"
@@ -23,6 +22,8 @@ setopt autocd
 unsetopt beep
 unsetopt automenu
 bindkey -e
+setopt auto_cd
+cdpath=($HOME/Dev)
 
 EXT_DOTS=$HOME/.dotfiles/ext
 
@@ -35,8 +36,3 @@ fi
 source ~/.dotfiles/colors
 source ~/.dotfiles/prompt
 source ~/.dotfiles/aliases
-# virtualenvwrapper
-# export WORKON_HOME=$HOME/.virtualenvs
-# source /usr/local/bin/virtualenvwrapper.sh
-
-[[ -s "/Users/travis/.rvm/scripts/rvm" ]] && source "/Users/travis/.rvm/scripts/rvm"
