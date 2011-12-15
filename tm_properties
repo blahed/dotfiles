@@ -1,0 +1,18 @@
+TM_GIT         = "/usr/local/bin/git"
+excludeFiles   = "*.{so,pyc,o,scssc}"
+excludeDirectories = "build,dist,tmp,log"
+
+# show the path to the current tab's file in the window title 
+windowTitle    = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/blahed\w+\/?(.*)|(.+))\z/${2:? – ${2/\A\/Users\/blahed/~/}:${1/\A(?=.)/ – /}}/}"
+
+fontName       = "Monaco" 
+fontSize       = 13
+tabSize        = 2
+softTabs       = true
+wrapColumn     = "Use Window Frame"
+softWrap       = false
+showInvisibles = false
+
+# [ *.{txt,md,mdown,markdown} ]
+# spellChecking  = true
+# tabSize        = 4
