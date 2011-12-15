@@ -6,7 +6,7 @@ excludeDirectories = "build,dist,tmp,log"
 windowTitle    = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/blahed\w+\/?(.*)|(.+))\z/${2:? – ${2/\A\/Users\/blahed/~/}:${1/\A(?=.)/ – /}}/}"
 
 fontName       = "Monaco" 
-fontSize       = 13
+fontSize       = 11
 tabSize        = 2
 softTabs       = true
 wrapColumn     = "Use Window Frame"
