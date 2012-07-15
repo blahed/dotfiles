@@ -33,9 +33,12 @@ alias cb='tr -d "\n" | pbcopy'
 
 
 alias grep='GREP_COLOR="1;37;41" LANG=C grep --color=auto'
+alias psg='ps aux | grep'
 alias df='df -h'
 alias du='du -h -d 1'
 alias less='less -I'
+alias empty='cat /dev/null >'
+# ruby related
 alias ri='ri -Tf ansi'
 alias sg='shotgun -s thin -p 3333'
 

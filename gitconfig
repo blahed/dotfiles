@@ -1,6 +1,5 @@
 [user]
         name = blahed
-        email = travis.dunn@thisismedium.com
 [color]
         diff = auto
         status = auto
@@ -16,7 +15,8 @@
         br = branch
         sta = stash
         w = whatchanged
+	aa = add --all
 [core]
         pager = less -FRSX
         whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-        excludesfile = /Users/travis/.dotfiles/gitignore
+        excludesfile = /Users/blahed/.dotfiles/gitignore
