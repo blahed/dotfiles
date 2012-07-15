@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>actionname</key>
+	<string>Reveal in Finder</string>
+	<key>actiontype</key>
+	<string></string>
+	<key>anchored</key>
+	<true/>
+	<key>category</key>
+	<string>FILTERS</string>
+	<key>daterange</key>
+	<integer>0</integer>
+	<key>disabled</key>
+	<false/>
+	<key>filetypes</key>
+	<array>
+		<string>public.folder</string>
+	</array>
+	<key>ignoresystemfiles</key>
+	<true/>
+	<key>keyword</key>
+	<string>dev</string>
+	<key>metadatafields</key>
+	<array>
+		<dict>
+			<key>field</key>
+			<string>kMDItemDisplayName</string>
+			<key>not</key>
+			<false/>
+			<key>value</key>
+			<string>{query}</string>
+			<key>words</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>field</key>
+			<string>kMDItemFinderComment</string>
+			<key>not</key>
+			<false/>
+			<key>value</key>
+			<string>{query}</string>
+			<key>words</key>
+			<true/>
+		</dict>
+	</array>
+	<key>scope</key>
+	<string>/Users/blahed/Dev</string>
+	<key>subtitle</key>
+	<string></string>
+	<key>title</key>
+	<string>Dev</string>
+</dict>
+</plist>
