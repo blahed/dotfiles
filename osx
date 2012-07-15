@@ -1,6 +1,9 @@
 # Enable the 2D Dock
 defaults write com.apple.dock no-glass -bool true
 
+# Speed up showing the Dock
+defaults write com.apple.Dock autohide-delay -float 0
+
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.Dock show-process-indicators -bool true
 
