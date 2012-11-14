@@ -1,39 +1,51 @@
-git_dirty () {
-    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-}
-
-git_branch_name () {
-    git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
-}
-
-function precmd {
-    GITBRANCH=$(git_branch_name)
-    GITDIRTY=$(git_dirty)
-    setprompt
-}
-
 autoload colors
 eval colors
 
 if [ $UNAME != "Darwin" ]; then
-  HOSTNAME="$(hostname) "
-  COLOR=pink
+    HOSTNAME="$(hostname) "
+    COLOR=pink
 fi
 
-setprompt () {
-          setopt prompt_subst
-	  local btext="%{$fg_bold[$COLOR]%}"
-          local final="%{$reset_color%}"
+function git_dirty() {
+     [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
 
-          if [ -n "$GITBRANCH" ]
-          then
-            local git="(%{$fg_no_bold[green]%}$GITBRANCH%{$fg_no_bold[yellow]%}$GITDIRTY${final})"
-          else
-            local git=""
-          fi
+function git_branch_name() {
+     git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
+}
 
-          PROMPT="${btext}$HOSTNAME${final}%c ${git}$ "
-          RPROMPT=""
+function setprompt() {
+    setopt prompt_subst
+    local btext="%{$fg_bold[$COLOR]%}"
+    local final="%{$reset_color%}"
+
+    if [ -n "$GITBRANCH" ]; then
+        local git="(%{$fg_no_bold[green]%}$GITBRANCH%{$fg_no_bold[yellow]%}$GITDIRTY${final})"
+    else
+        local git=""
+    fi
+
+    PROMPT="${btext}$HOSTNAME${final}%c ${git}$ "
+    RPROMPT=""
+}
+
+function settitle() {
+    local SEARCH=' '
+    local REPLACE='%20'
+    local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+    printf '\e]7;%s\a' "$PWD_URL"
+}
+
+function precmd() {
+    GITBRANCH=$(git_branch_name)
+    GITDIRTY=$(git_dirty)
+    setprompt
+    settitle
+}
+
+function preexec() {
+    settitle
 }
 
 setprompt
+settitle
