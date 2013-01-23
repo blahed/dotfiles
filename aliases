@@ -46,3 +46,7 @@ alias targzc='tar --exclude=".DS_Store" --exclude="*pyc" -zcvf'
 alias tarbzc='tar --exclude=".DS_Store" --exclude="*pyc" -jcvf'
 alias targzx='tar -zxvf'
 alias tarbzx='tar -xvjf'
+
+function tmpp() {
+  mkdir -p /tmp/$1 && cd /tmp/$1;
+}
