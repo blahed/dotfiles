@@ -1,4 +1,5 @@
 TM_GIT         = "/usr/local/bin/git"
+scmStatus      = false
 
 # show the path to the current tab's file in the window title
 windowTitle    = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/blahed\w+\/?(.*)|(.+))\z/${2:? – ${2/\A\/Users\/blahed/~/}:${1/\A(?=.)/ – /}}/}"
@@ -13,7 +14,7 @@ softWrap       = false
 showInvisibles = false
 
 # Includes
-mExtraIncludes = ".htaccess,.gitignore"
+mExtraIncludes = ".htaccess,.gitignore,.gitkeep"
 fileBrowserGlob  = "{*,$mExtraIncludes}"
 include = "{$include,$mExtraIncludes}"
 
@@ -43,9 +44,9 @@ tabSize          = 2
 softTabs         = true
 tabSize          = 4
 
-[ "{README,INSTALL,LICENSE,TODO}" ]
-fileType         = "text.plain"
-
 [ *.{txt,md,mdown,markdown} ]
+fontSize       = 13
 spellChecking  = true
 tabSize        = 4
+wrapColumn     = 80
+softWrap       = true
