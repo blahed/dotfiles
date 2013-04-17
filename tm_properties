@@ -48,5 +48,5 @@ tabSize          = 4
 fontSize       = 13
 spellChecking  = true
 tabSize        = 4
-wrapColumn     = 80
+wrapColumn     = 120
 softWrap       = true
