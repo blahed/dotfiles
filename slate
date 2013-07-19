@@ -1,0 +1,51 @@
+# Config
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# General aliases
+alias sox screenOriginX
+alias soy screenOriginY
+alias ssx screenSizeX
+alias ssy screenSizeY
+
+# Position aliases
+alias centered ${sox}+${ssx}/8;${soy}+${ssy}/8 ${ssx}/8*6;${ssy}/8*6
+alias 1024 ${ssx}/2-512;0 1024;${ssy}
+alias fullscreen ${sox};${soy} ${ssx};${ssy}
+alias leftHalf ${sox};${soy} ${ssx}/2;${ssy}
+alias bottomHalf ${sox};${soy}+${ssy}/2 ${ssx};${ssy}/2
+alias topHalf ${sox};${soy} ${ssx};${ssy}/2
+alias rightHalf ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}
+alias topLeftQuarter ${sox};${soy} ${ssx}/2;${ssy}/2
+alias topRightQuarter ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}/2
+alias bottomLeftQuarter ${sox};${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
+alias bottomRightQuarter ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
+
+# Layouts
+layout main 'Finder' move ${topLeftQuarter} | move ${topRightQuarter} | move ${bottomLeftQuarter} | move ${bottomRightQuarter}
+layout main 'Terminal' move ${bottomLeftQuarter} | move ${bottomRightQuarter}
+layout main 'Textmate' move ${fullscreen}
+layout main 'Safari' move ${1024}
+layout main 'Google Chrome' move ${1024}
+layout main 'Messages' move ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}/1.5
+layout main 'EchofonLite' move ${ssx}-350;${soy}+${ssy}/3 350;${ssy}/1.5
+
+# Bindings
+alias modifiers-1 cmd;ctrl;shift
+alias modifiers-2 cmd;ctrl;alt
+
+bind c:${modifiers-1} chain move ${1024}
+bind f:${modifiers-1} move ${fullscreen}
+bind left:${modifiers-1} chain move ${leftHalf} | move ${topLeftQuarter} | move ${bottomLeftQuarter}
+bind right:${modifiers-1} chain move ${rightHalf} | move ${topRightQuarter} | move ${bottomRightQuarter}
+bind up:${modifiers-1} chain move ${topHalf} | move ${topLeftQuarter} | move ${topRightQuarter}
+bind down:${modifiers-1} chain move ${bottomHalf} | move ${bottomLeftQuarter} | move ${bottomRightQuarter}
+
+bind left:${modifiers-2}  nudge -10% +0
+bind right:${modifiers-2} nudge +10% +0
+bind up:${modifiers-2}    nudge +0 -10%
+bind down:${modifiers-2}  nudge +0 +10%
+
+bind return:${modifiers-1} undo
+bind h:${modifiers-1} layout main
+bind r:${modifiers-1} relaunch

@@ -1,4 +1,4 @@
-DOTFILES = %w(zshrc gemrc gitconfig irbrc emacs tm_properties)
+DOTFILES = %w(zshrc gemrc gitconfig irbrc emacs tm_properties slate)
 BIN_FOLDERS = %w(applescripts)
  
 
