@@ -19,7 +19,7 @@ fileBrowserGlob  = "{*,$mExtraIncludes}"
 include = "{$include,$mExtraIncludes}"
 
 # Excludes
-mExtraExcludes = "build,dist,log,vendor,node_modules,tmp"
+mExtraExcludes = "build,dist,log,node_modules,tmp"
 excludeInFileChooser  = "{$excludeInFileChooser,$mExtraExcludes}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$mExtraExcludes}"
 excludeDirectories = "$mExtraExcludes"

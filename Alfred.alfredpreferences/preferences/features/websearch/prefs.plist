@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>0D527C25-7DBC-4BE9-946D-239AC1717779</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gem</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>RubyGem</string>
+			<key>url</key>
+			<string>http://rubygems.org/gems/{query}</string>
+			<key>utf8</key>
+			<false/>
+		</dict>
+		<key>B2BA3194-22D0-40A8-9342-C1295AECB830</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>github</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>github</string>
+			<key>url</key>
+			<string>https://github.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>DA42309A-EDEB-40CA-AE71-4A18772133D6</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gems</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>RubyGems Search</string>
+			<key>url</key>
+			<string>http://rubygems.org/search?query={query}</string>
+			<key>utf8</key>
+			<false/>
+		</dict>
+		<key>F072F1B2-C71C-4B97-9997-9A25B0F18F28</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>npms</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>NPM Search</string>
+			<key>url</key>
+			<string>https://npmjs.org/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>FF166C56-43A7-48F3-AE16-C708490552FD</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>npm</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>NPM</string>
+			<key>url</key>
+			<string>https://npmjs.org/package/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
