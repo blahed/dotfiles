@@ -28,7 +28,7 @@ layout main 'Textmate' move ${fullscreen}
 layout main 'Safari' move ${1024}
 layout main 'Google Chrome' move ${1024}
 layout main 'Messages' move ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}/1.5
-layout main 'EchofonLite' move ${ssx}-350;${soy}+${ssy}/3 350;${ssy}/1.5
+layout main 'Echofon' move ${ssx}-350;${soy}+${ssy}/3 350;${ssy}/1.5
 
 # Bindings
 alias modifiers-1 cmd;ctrl;shift
