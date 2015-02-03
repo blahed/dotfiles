@@ -36,5 +36,9 @@ source ~/.dotfiles/colors
 source ~/.dotfiles/prompt
 source ~/.dotfiles/aliases
 
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 # rbenv
 eval "$(rbenv init -)"
