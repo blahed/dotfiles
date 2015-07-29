@@ -40,6 +40,7 @@ layout main13 'TextMate' move ${fullscreen}
 layout main13 'Xcode' move ${fullscreen}
 layout main13 'Google Chrome' move ${fullscreen}
 layout main13 'HipChat' move ${fullscreen}
+layout main13 'Slack' move ${fullscreen}
 layout main13 'Mail' move ${fullscreen}
 
 # Extended 27" layout
@@ -49,6 +50,7 @@ layout main27 'Xcode' move ${fullscreen}
 layout main27 'Safari' move ${1140} | move ${rightHalf}
 layout main27 'Google Chrome' move ${1140}
 layout main27 'HipChat' move ${bottomLeftQuarter}
+layout main27 'Slack' move ${bottomLeftQuarter}
 layout main27 'Mail' move ${topRightQuarter}
 
 default main13 count:1
