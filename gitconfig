@@ -16,6 +16,7 @@
         br = branch
         sta = stash
         w = whatchanged
+        forgit = reset --soft HEAD~1
 	aa = add --all
 [core]
         pager = less -FRSX
