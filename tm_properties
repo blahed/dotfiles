@@ -2,7 +2,7 @@ TM_GIT         = "/usr/local/bin/git"
 scmStatus      = false
 
 # show the path to the current tab's file in the window title
-windowTitle    = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/blahed\w+\/?(.*)|(.+))\z/${2:? – ${2/\A\/Users\/blahed/~/}:${1/\A(?=.)/ – /}}/}"
+windowTitle    = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/trvsdnn\w+\/?(.*)|(.+))\z/${2:? – ${2/\A\/Users\/trvsdnn/~/}:${1/\A(?=.)/ – /}}/}"
 
 # Style
 fontName       = "Monaco"
@@ -19,7 +19,7 @@ fileBrowserGlob  = "{*,$mExtraIncludes}"
 include = "{$include,$mExtraIncludes}"
 
 # Excludes
-mExtraExcludes = "build,dist,log,node_modules,tmp"
+mExtraExcludes = "build,dist,log,node_modules,bower_components,tmp"
 excludeInFileChooser  = "{$excludeInFileChooser,$mExtraExcludes}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$mExtraExcludes}"
 excludeDirectories = "$mExtraExcludes"
