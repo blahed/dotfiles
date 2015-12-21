@@ -1,4 +1,5 @@
 export PATH=$HOME/bin/:$HOME/.rbenv/bin:/usr/local/bin:$PATH
+export GOPATH=$HOME/.go
 export MANPATH=/opt/local/share/man:$MANPATH
 # nano is the default sucka!
 export EDITOR="nano"
