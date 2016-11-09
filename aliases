@@ -34,6 +34,13 @@ alias empty='cat /dev/null >'
 alias be='bundle exec'
 alias ri='ri -Tf ansi'
 
+# docker
+alias docker-start='docker-machine start default'
+alias docker-ssh='docker-machine ssh default'
+alias docker-nameserver='docker-machine ssh default "grep -q $NAMESERVER /etc/resolv.conf || echo "nameserver $NAMESERVER" >> /etc/resolv.conf"'
+alias docker-env='eval "$(docker-machine env default)" && docker-nameserver'
+alias docker-kill='docker ps | awk '{print $NF}' | tail -1 | xargs docker kill'
+
 alias targzc='tar --exclude=".DS_Store" --exclude="*pyc" -zcvf'
 alias tarbzc='tar --exclude=".DS_Store" --exclude="*pyc" -jcvf'
 alias targzx='tar -zxvf'
